@@ -40,7 +40,7 @@ class Massif:
         print(f"{name}:{massif_c}")
     
     def write_conjunction_massif(self, massif_a, massif_b, file_name, name="Рузельтат конъюнкции"):
-        file = open(file_name, "r+")
+        file = open(file_name, "w")
         massif_c = []
         for i in range(len(massif_a)):
             if massif_a[i] == massif_b[i]:
@@ -70,4 +70,4 @@ Massif().print_massif(primer_2)
 print(Massif().check_massif(primer_2))
 Massif().print_conjunction_massif(primer_1, primer_2)
 name_file_2 = str(input("Введите название записывающего файла: "))
-Massif().write_conjunction_massif(primer_1, primer_2, name_file_2 + ".txt")
+Massif().write_conjunction_massif(primer_1, primer_2, name_file_2)
