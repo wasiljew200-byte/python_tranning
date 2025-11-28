@@ -1,7 +1,10 @@
 class Massif:
     def __init__(self, size=8):
         self.CONST_SIZE_MASSIF = size
-        
+    
+    def __del__(self):
+        print("Объект был удалён")
+
     def create_new_massif(self):
         line = input("Введите символы через пробел: ")
         massif = list(map(int, line.split()))
@@ -59,4 +62,3 @@ class Massif:
 
     def print_massif(self, massif, name="Массив"):
         print(f"{name}:{massif}")
-
