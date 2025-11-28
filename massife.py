@@ -80,3 +80,38 @@ class Massif:
 
     def print_massif(self, massif, name="Массив"):
         print(f"{name}:{massif}")
+
+
+
+    def __getitem__(self, index):
+        if isinstance(index, slice):
+            return self._data[index]
+        return self._data[index]
+    
+    def __and__(silf, other):
+        massif_c = []
+        for i in range(len(self)):
+            if self[i] == other[i]:
+                massif_c.append(massif_a[i])
+            else:
+                massif_c.append(0)
+        return Massif(massif_c)
+    
+    def __lshift__(self, k1):
+        if not isinstance(k1, int):
+            return NotImplemented
+        
+        result = self._data[k1:] + [0] * min(k1, len(self))
+        return Massif(result)
+    
+    def __rshift__(self, k2):
+        if not isinstance(k2, int):
+            return NotImplemented
+        
+        result = [0] * min(n, len(self)) + self._data[:-k2] if k2 > 0 else self._data.copy()
+        return Massif(result)
+    
+    def __eq__(self, other):
+        if not isinstance(other, Massif):
+            return False
+        return self._data == other._data
