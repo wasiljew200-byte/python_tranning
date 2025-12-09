@@ -11,20 +11,21 @@ Massif().print_conjunction_massif(primer_1, primer_2)
 name_file_2 = str(input("Введите название записывающего файла: "))
 Massif().write_conjunction_massif(primer_1, primer_2, name_file_2)
 
-# m1 = Massif([1, 0, 1, 1, 0, 1, 0, 1])
-# m2 = Massif([1, 1, 0, 1, 0, 0, 1, 1])
 
-# print("Исходные массивы:")
-# print(f"m1 = {m1}")
-# print(f"m2 = {m2}")
+m1 = Massif(data=[1, 0, 1, 1, 0, 1, 0, 1])
+m2 = Massif(data=[1, 1, 0, 1, 0, 0, 1, 1])
 
-# print(f"m1[0] = {m1[0]}")
+print("Исходные массивы:")
+print(f"m1 = {m1}")
+print(f"m2 = {m2}")
 
-# result_and = m1 & m2
-# print(f"m1 & m2 = {result_and}")
+print(f"m1[0] = {m1[0]}")
 
-# result_shift_left = m1 << 2
-# print(f"m1 << 2 = {result_shift_left}")
+result_and = m1 & m2
+print(f"m1 & m2 = {result_and}")
 
-# result_shift_right = m1 >> 2
-# print(f"m1 >> 2 = {result_shift_right}")
+result_shift_left = m1 << 2
+print(f"m1 << 2 = {result_shift_left}")
+
+result_shift_right = m1 >> 2
+print(f"m1 >> 2 = {result_shift_right}")
